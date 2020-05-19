@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 
 public class TestDemo1 {
     public static void main(String[] args) {
-        test2();
+        test1();
     }
 
     public static void test1 (){
@@ -39,26 +39,33 @@ public class TestDemo1 {
 
         // 交集
         List<Sdudent> outList1 = list1.stream().filter(list -> list2.contains(list)).collect(Collectors.toList());
-        System.out.println(outList1);
+        System.out.println("交集start");
+        outList1.stream().forEach(out -> System.out.println(out.getId() + ";" + out.getName() + ";" + out.getAge()));
 
         // 差集
         List<Sdudent> outList2 = list1.stream().filter(list -> !list2.contains(list)).collect(Collectors.toList());
-        System.out.println(outList1);
+        System.out.println("差集start");
+        outList2.stream().forEach(out -> System.out.println(out.getId() + ";" + out.getName() + ";" + out.getAge()));
 
         // 差集
         List<Sdudent> outList3 = list2.stream().filter(list -> !list1.contains(list)).collect(Collectors.toList());
-        System.out.println(outList1);
+        System.out.println("差集start");
+        outList3.stream().forEach(out -> System.out.println(out.getId() + ";" + out.getName() + ";" + out.getAge()));
 
         // 差集合并
-
+        outList2.addAll(outList3);
+        System.out.println("差集合并start");
+        outList2.stream().forEach(out -> System.out.println(out.getId() + ";" + out.getName() + ";" + out.getAge()));
 
         // 并集去重复
         List<Sdudent> outList5 = Stream.of(list1, list2, list3).flatMap(Collection::stream).distinct().collect(Collectors.toList());
-        System.out.println(outList2);
+        System.out.println("并集start");
+        outList5.stream().forEach(out -> System.out.println(out.getId() + ";" + out.getName() + ";" + out.getAge()));
 
         // 并集
         List<Sdudent> outList6 = map.values().stream().flatMap(Collection::stream).distinct().collect(Collectors.toList());
-        System.out.println(outList2);
+        System.out.println("并集start");
+        outList6.stream().forEach(out -> System.out.println(out.getId() + ";" + out.getName() + ";" + out.getAge()));
 
     }
 
@@ -92,6 +99,30 @@ public class TestDemo1 {
         public Sdudent(int id, String name, int age) {
             this.id = id;
             this.name = name;
+            this.age = age;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public void setAge(int age) {
             this.age = age;
         }
     }
