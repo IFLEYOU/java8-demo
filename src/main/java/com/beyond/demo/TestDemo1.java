@@ -15,7 +15,7 @@ public class TestDemo1 {
     }
 
     public static void test1 (){
-        Sdudent s1 = new Sdudent(1,"A",13);
+        Sdudent s1 = new Sdudent(1,"A",12);
         Sdudent s2 = new Sdudent(2,"B",21);
         Sdudent s3 = new Sdudent(3,"C",31);
         List<Sdudent> list1 = new ArrayList<>();
