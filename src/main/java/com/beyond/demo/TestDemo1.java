@@ -1,6 +1,11 @@
 package com.beyond.demo;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -10,9 +15,9 @@ public class TestDemo1 {
     }
 
     public static void test1 (){
-        Sdudent s1 = new Sdudent(1,"A",10);
-        Sdudent s2 = new Sdudent(2,"B",20);
-        Sdudent s3 = new Sdudent(3,"C",30);
+        Sdudent s1 = new Sdudent(1,"A",11);
+        Sdudent s2 = new Sdudent(2,"B",21);
+        Sdudent s3 = new Sdudent(3,"C",31);
         List<Sdudent> list1 = new ArrayList<>();
         list1.add(s1);
         list1.add(s2);
